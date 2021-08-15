@@ -1,22 +1,15 @@
 package Exercicios
 
 
-class Item{
-    val numero_item: Int
-    val descricao_item: String
-    val qtde_comprada: Int
-    val preco_unitario: Double
+class Item(
+    var numero_item: Int = 0,
+    var descricao_item: String = "",
+    var qtde_comprada: Int = 0,
+    var preco_unitario: Double = 0.0
+){
 
-    constructor(
-        numero_item: Int,
-        descricao_item: String,
-        qtde_comprada: Int,
-        preco_unitario: Double
-    ){
-        this.numero_item = numero_item
-        this.descricao_item = descricao_item
-        this.qtde_comprada = qtde_comprada
-        if(preco_unitario < 0.0) {
+    init {
+        if(this.preco_unitario < 0.0) {
             this.preco_unitario = 0.0
         } else{
             this.preco_unitario = preco_unitario
